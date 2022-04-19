@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QTranslator>
+#include "dialog.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -15,6 +16,9 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
+protected:
+    virtual void keyPressEvent(QKeyEvent *event);
 
 private slots:
     void on_action_triggered();
@@ -29,8 +33,12 @@ private slots:
 
     void on_action_5_triggered();
 
+    void on_action_6_triggered();
+
 private:
     Ui::MainWindow *ui;
     QTranslator qTranslator;
+    Dialog *dialog;
+
 };
 #endif // MAINWINDOW_H
