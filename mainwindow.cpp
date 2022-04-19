@@ -4,6 +4,7 @@
 #include "QTextStream"
 #include "QVBoxLayout"
 #include "QLabel"
+#include <QDebug>
 
 QWidget* pWindow;
 QDialog* childDialog;
@@ -36,6 +37,10 @@ MainWindow::MainWindow(QWidget *parent)
     ui->action_4->setText(tr("Справка"));
     ui->menu_2->setTitle(tr("Язык"));
 
+
+    qTranslator.load(":/new/laguages/QtLanguage_ru.qm");
+    qApp->installTranslator(&qTranslator);
+    ui->retranslateUi(this);
 
 }
 
@@ -104,6 +109,16 @@ void MainWindow::on_action_3_triggered()
 
 void MainWindow::on_actionEnglish_triggered()
 {
+    qTranslator.load(":/new/laguages/QtLanguage_en.qm");
+    qApp->installTranslator(&qTranslator);
+    ui->retranslateUi(this);
+}
 
+
+void MainWindow::on_action_5_triggered()
+{
+    qTranslator.load(":/new/laguages/QtLanguage_ru.qm");
+    qApp->installTranslator(&qTranslator);
+    ui->retranslateUi(this);
 }
 

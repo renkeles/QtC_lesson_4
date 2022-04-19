@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QTranslator>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -26,7 +27,10 @@ private slots:
 
     void on_actionEnglish_triggered();
 
+    void on_action_5_triggered();
+
 private:
     Ui::MainWindow *ui;
+    QTranslator qTranslator;
 };
 #endif // MAINWINDOW_H
